@@ -151,7 +151,8 @@ def start_end(start=None, end=None):
 
     start = dt.date(2016,8,23)
     end = dt.date(2017,8,23)
-        
+     
+    #Finds min, avg, and max temperatures based on start and end date.
     if not end:
         results = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
             filter(Measurement.date >= start).filter(Measurement.date <= end).all()
